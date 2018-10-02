@@ -215,6 +215,11 @@ public:
     WNC14A2AInterface(WNCDebug *_dbgUart = NULL);
     virtual ~WNC14A2AInterface();
 
+    Mutex* get_mutex() {
+        return  &_pwnc_mutex;                      
+    }
+        
+
     /** Set the cellular network credentials
      *
      *  @param apn      Optional, APN of network
