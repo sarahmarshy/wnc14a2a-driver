@@ -215,6 +215,10 @@ public:
     WNC14A2AInterface(WNCDebug *_dbgUart = NULL);
     virtual ~WNC14A2AInterface();
 
+    void chain_equeue(EventQueue* queue) {
+        queue->chain(&wnc_queue);
+    }
+
     /** Set the cellular network credentials
      *
      *  @param apn      Optional, APN of network
